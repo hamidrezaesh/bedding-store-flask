@@ -1,0 +1,41 @@
+.about{
+    display: flex;
+    direction: rtl;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+
+.about-txt{
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.about h3{
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+
+.about p{
+    max-width: 100ch;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+.footer{
+    padding-top: 14rem;
+    direction: rtl;
+}
+
+@media (max-width: 400px){
+    .about p{
+        font-size: 1rem;
+        max-width: 100ch;
+    }
+}

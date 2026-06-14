@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact-form</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/_contact-form.css')}}">
+</head>
+<body>
+    <div class="contact">
+        <form action="mailto:example@example.com" method="post">
+            <h3>ارتباط با ما</h3>
+            <input type="text" name="name" id="name" placeholder="نام شما" required><br>
+            <input type="email" name="email" id="email" placeholder="ایمیل شما" required><br>
+            <input type="text" name="subject" placeholder="موضوع" required><br>
+            <textarea name="message" id="message" rows="8" placeholder="پیام خود را بنویسید..." required></textarea><br>
+            <button type="submit">ارسال ایمیل</button>
+        </form>
+    </div>
+</body>
+</html>

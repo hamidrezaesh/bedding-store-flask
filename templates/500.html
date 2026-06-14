@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - خطای داخلی سرور</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+</head>
+<body dir="rtl">
+    <div class="error-container">
+        <div class="error-content">
+            <h1 class="error-code">۴۰۳</h1>
+            <h2 class="error-title">خطای داخلی سرور</h2>
+            <p class="error-message">
+                متاسفانه خطایی در سرور رخ داده است
+            </p>
+            <div class="error-actions">
+                <a href="{{ url_for('home') }}" class="btn-home">بازگشت به صفحه اصلی</a>
+                <a href="javascript:history.back()" class="btn-back">بازگشت به صفحه قبل</a>
+            </div>
+        </div>
+    </div>
+</body>

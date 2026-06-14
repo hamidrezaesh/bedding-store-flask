@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه پیدا نشد - 404</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
+</head>
+<body dir="rtl">
+    <div class="error-container">
+        <div class="error-content">
+            <h1 class="error-code">۴۰۴</h1>
+            <h2 class="error-title">صفحه مورد نظر پیدا نشد :(</h2>
+            <p class="error-message">
+                متأسفانه صفحه‌ای که به دنبال آن هستید وجود ندارد یا جابه‌جا شده است.
+            </p>
+            <div class="error-actions">
+                <a href="{{ url_for('home') }}" class="btn-home">بازگشت به صفحه اصلی</a>
+                <a href="javascript:history.back()" class="btn-back">بازگشت به صفحه قبل</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+</head>
+<body>    
+    <div class="upper">
+        <a href="/" class="back"><span>&nbsp; < </span></a>
+    </div>
+
+    <div class="form">
+        <form method="post">
+            <h2>ورود یا ثبت نام</h3><br>
+            <input type="email" name="email" placeholder="ایمیل" class="input" required><br><br>
+            <input type="password" name="password" placeholder="رمز عبور" class="input" required><br><br>
+            <input type="submit" value="ورود" class="submit">
+        </form>
+    </div>
+</body>
+</html>

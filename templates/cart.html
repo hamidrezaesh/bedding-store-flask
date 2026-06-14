@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cart.css')}}">
+    <title>سبد خرید</title>
+</head>
+<body dir="rtl">
+    
+    <span style="direction: ltr;">{% include '_header.html' %}</span>
+    
+    <div class="cart-container">
+        <h2>سبد خرید</h2>
+        <span>تعداد کالا: {{items_count}}</span>
+        <hr>
+
+        {% if items %}
+            {% for item in items %}
+            <div class="cart-item">
+                <div class="item-info">
+                    <div class="item-name">{{item[3]}} × {{item[1]|price}}</div>
+                    <div class="item-price">{{(item[4]*item[1])|price}}</div>
+                </div>
+
+                <div class="item-subtotal">
+                    {{item['subtotal']}}
+                </div>
+
+                <div class="item-actions">
+                    <form method="post" action="{{url_for('remove_from_cart', product_id=item[2])}}">
+                        <button type="submit" class="remove-btn">خذف</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="cart-summary">
+                <div class="total">مبلغ کل: {{ total|price}} تومان</div>
+            </div>
+            {% else %}
+                <div class="empty-cart">
+                    <p>سبد خرید خالی است!</p>
+                    <a href="{{url_for('products')}}" class="buy-btn">خرید کنید</a>
+                </div>
+        {% endif %}
+    </div>
+</body>
+</html>

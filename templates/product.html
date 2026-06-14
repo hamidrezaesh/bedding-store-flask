@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{product[1]}}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/product.css')}}">
+    <script src="{{ url_for('static', filename='js/products.js') }}"></script>
+</head>
+<body dir="rtl">
+    <span style="direction: ltr;">{% include "_header.html" %}</span>
+    <div class="back"><a href="/products">بازگشت</a></div>
+    <div class="product-detail-container">
+        <div class="product-detail">
+            <div class="product-img">
+                <img src="{{ url_for('static', filename=product[4]) }}" alt="{{product[1]}}">
+            </div>
+
+            <div class="product-info">
+                <h2>{{product[1]}}</h2>
+                <p class="product-description">{{product[3]}}</p>
+                {% if product[5] < 15 %}
+                    <div class="product-stock">تنها {{product[5]}} عدد در انبار باقی مانده</div> 
+                {% endif %}
+            </div>
+            <div class="product-input">
+                <div class="product-price-div"><div class="product-price">{{product[2]|price}}</div><span>تومان&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <form action="{{ url_for('add_to_cart', product_id=product[0]) }}" method="post">
+                    {% if in_cart %}
+                        <button type="submit" class="show-cart-btn"><a href="/cart">مشاهده سبد</a></button>
+                    {% else %}
+                        <div class="quantity-input-div">
+                            <button type="button" class="btn-minus" onclick="decrement(this)">-</button>
+                            <input type="number" name="quantity" value="1" min="1" max="{{ product[5] }}" class="quantity-input">
+                            <button type="button" class="btn-plus" onclick="increment(this)">+</button>
+                        </div>
+                        <button type="submit" class="add-to-cart-btn">افزودن به سبد</button>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>    
+    <div class="info-container">
+        <h3>توضیحات</h3>
+        <p>{{ product[6] }}</p>
+    </div>
+    {% include '_footer.html' %}
+</body>
+</html>

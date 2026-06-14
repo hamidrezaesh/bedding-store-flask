@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.form {
+    display: flex;
+    padding: 10rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.upper{
+    display: flex;
+}
+
+.input{
+    background-color: rgba(175, 175, 175, 0.212);
+    border: none;
+    border-radius: 0.25rem;
+    width: 20rem;
+    height: 3rem;
+    cursor: pointer;
+
+    transition: all 0.4 ease;
+    
+}
+
+.input::placeholder{
+    opacity: 80%;
+    text-align: center;
+}
+
+.input:hover{
+    transform: translateY(-4px) translateX(-4px);
+}
+
+.input:focus{
+    background-color: rgba(175, 175, 175, 0.404);
+    outline-color: rgba(0, 162, 255, 0.212);
+}
+
+.submit{
+    background-color: rgba(0, 162, 255, 0.212);
+    border: none;
+    border-radius: 0.25rem;
+    width: 5rem;
+    height: 2rem;
+    cursor: pointer;
+
+    transition: all 0.4 ease;
+}
+
+.submit:hover{
+    transform: translateY(-2px) translateX(-2px);
+}
+
+.back{
+    font-size: 2rem;
+    cursor: pointer;
+        text-decoration: none;
+
+}
+
+
+.back:visited{
+    color: inherit;
+}
+
+h4{
+    display: flex;
+    margin-left: auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 400px){
+    .input:hover, .submit:hover{
+        transform: translateX(0) translateY(0);
+    }
+}

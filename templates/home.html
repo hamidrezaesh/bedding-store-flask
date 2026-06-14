@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کالای خواب</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+</head>
+<body>
+    {% include "_header.html" %}
+    <div class="home">
+        <div class="section">
+            <img src="{{url_for('static', filename='images/products/bed1.webp')}}" alt="عکس تخت" class="image">
+            <div class="text">
+                <h3 class="h3">در رویاها بخوابید</h3>
+                <p class="p">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+            </div>
+        </div>
+        <div class="products-div">
+            <div class="title">
+                <h2>محصولات</h3>
+                <h4><a href="/products">مشاهده همه</a></h5>
+            </div>
+            <div class="products">
+                {% for product in products[:10] %}
+                    <a href="/products/product/{{product[0]}}">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="{{ url_for('static', filename=product[4]) }}" alt="{{ product[1] }}">
+                            </div>
+                            <div class="product-name">{{ product[1] }}</div>
+                            <div class="product-price">{{ product[2]| price }}</div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="section">
+            <img src="{{url_for('static', filename='images/products/pillow1.webp')}}" alt="عکس تخت" class="image-mobile">
+            <div class="text">
+                <h3 class="h3">در رویاها بخوابید</h3>
+                <p class="p">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+            </div>
+            <img src="{{url_for('static', filename='images/products/pillow1.webp')}}" alt="عکس تخت" class="image-2">
+        </div>
+        <div class="contact-form-span">{% include "_contact-form.html" %}</div>
+    <div dir="rtl">{% include "_footer.html" %}</div>
+</body>
+</html>
