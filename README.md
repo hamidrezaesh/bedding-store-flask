@@ -64,7 +64,11 @@ http://127.0.0.1:5000/
 
 ---
 
+
 ## 📄 License
 This project is released under the MIT License.
 Everyone can use, modify, or distribute it freely.  
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/hamidrezaesh/bedding-store-flask/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
+
+Made by [Hamidreza](https://github.com/hamidrezaesh)
